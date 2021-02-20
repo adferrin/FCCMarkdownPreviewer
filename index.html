@@ -10,8 +10,13 @@
 
     <title>Markdown Previewer</title>
     <script src="./js/marked.js"></script>
+    <script>
+        function updatePreview() {
+            document.getElementById("preview").innerHTML = marked(document.getElementById("editor").value)
+        }
+    </script>
   </head>
-  <body>
+  <body> 
     <div class="container-fluid">
         <div class="row">
             <div class="col text-center text-white bg-success">
@@ -21,7 +26,7 @@
         <div class="row">
             <div class="col-6 bg-primary">
                 <p>editor will be here</p>
-                <textarea id="editor"></textarea>
+                <textarea id="editor" onkeyup="updatePreview()"></textarea>
             </div>
             <div class="col-6 bg-info">
                 <p>markdown previewer will be here</p>
