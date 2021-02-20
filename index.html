@@ -9,20 +9,23 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 
     <title>Markdown Previewer</title>
+    <script src="./js/marked.js"></script>
   </head>
   <body>
     <div class="container-fluid">
         <div class="row">
-            <div class="col text-center">
+            <div class="col text-center text-white bg-success">
                 <h1>Markdown Previewer</h1>
             </div>
         </div>
         <div class="row">
-            <div class="col-6">
-                
+            <div class="col-6 bg-primary">
+                <p>editor will be here</p>
+                <textarea id="editor"></textarea>
             </div>
-            <div class="col-6">
-                
+            <div class="col-6 bg-info">
+                <p>markdown previewer will be here</p>
+                <div id="preview"></div>
             </div>
 
         </div>
