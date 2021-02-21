@@ -20,7 +20,7 @@
         document.onload = setDefault;
 
         function setDefault() {
-            let defaultText = `
+            let defaultText = `\
 # Austin was here
 ## he made this thing 
 [I love skateboarding](https://www.thrashermagazine.com/).
@@ -54,16 +54,18 @@ or have some **bold** text
     <div class="container-fluid">
         <div class="row">
             <div class="col text-center text-white bg-success">
-                <h1>Markdown Previewer</h1>
+                <h1 style="color: white">Markdown Previewer</h1>
             </div>
         </div>
         <div class="row">
             <div class="col-6 bg-primary">
-                <p>editor will be here</p>
-                <textarea id="editor" onkeyup="updatePreview()"></textarea>
+                <h2 style="color: white">Editor</h2>
+                    <div class="form-group">
+                        <textarea class="form-control" id="editor" onkeyup="updatePreview()"></textarea>
+                    </div>
             </div>
             <div class="col-6 bg-info">
-                <p>markdown previewer will be here</p>
+                <h2 style="color: white">Markdown Previewer</h2>
                 <div id="preview"></div>
             </div>
 
