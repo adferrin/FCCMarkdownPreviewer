@@ -12,11 +12,45 @@
     <script src="./js/marked.js"></script>
     <script>
         function updatePreview() {
-            document.getElementById("preview").innerHTML = marked(document.getElementById("editor").value)
+            let previewElement = document.getElementById("preview");
+            let editorValue = marked(document.getElementById("editor").value);
+            let markedUpHTML = marked(editorValue);
+            previewElement.innerHTML = markedUpHTML;
+        };
+        document.onload = setDefault;
+
+        function setDefault() {
+            let defaultText = `
+# Austin was here
+## he made this thing 
+[I love skateboarding](https://www.thrashermagazine.com/).
+            
+\`\`\`
+function exampleOf() {
+    return codeBlock;
+}
+\`\`\`
+
+\`inline code\`
+- This 
+- is 
+- my
+- list
+
+> Block Quotes
+            
+or have some **bold** text
+
+![JavaScript Logo w/ Text](https://cdn.uconnectlabs.com/wp-content/uploads/sites/25/2020/04/J.png)
+            `;
+            let editorField = document.getElementById("editor");
+            let previewElement = document.getElementById("preview");
+            editorField.value = defaultText;
+            previewElement.innerHTML = marked(defaultText);
         }
     </script>
   </head>
-  <body> 
+  <body onload="setDefault()"> 
     <div class="container-fluid">
         <div class="row">
             <div class="col text-center text-white bg-success">
