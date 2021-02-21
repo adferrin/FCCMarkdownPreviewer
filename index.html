@@ -21,8 +21,8 @@
 
         function setDefault() {
             let defaultText = `\
-# Austin was here
-## he made this thing 
+# This is my markdown previewer
+## It is pretty neat 
 [I love skateboarding](https://www.thrashermagazine.com/).
             
 \`\`\`
@@ -32,17 +32,18 @@ function exampleOf() {
 \`\`\`
 
 \`inline code\`
+
 - This 
 - is 
 - my
 - list
 
 > Block Quotes
-            
-or have some **bold** text
 
 ![JavaScript Logo w/ Text](https://cdn.uconnectlabs.com/wp-content/uploads/sites/25/2020/04/J.png)
-            `;
+
+here, have some **bold** text
+or ~~**don't**~~`;
             let editorField = document.getElementById("editor");
             let previewElement = document.getElementById("preview");
             editorField.value = defaultText;
@@ -50,22 +51,22 @@ or have some **bold** text
         }
     </script>
   </head>
-  <body onload="setDefault()"> 
+  <body onload="setDefault()" class="bg-secondary"> 
     <div class="container-fluid">
         <div class="row">
-            <div class="col text-center text-white bg-success">
+            <div class="col text-center text-white bg-secondary my-3">
                 <h1 style="color: white">Markdown Previewer</h1>
             </div>
         </div>
         <div class="row">
-            <div class="col-6 bg-primary">
-                <h2 style="color: white">Editor</h2>
-                    <div class="form-group">
-                        <textarea class="form-control" id="editor" onkeyup="updatePreview()"></textarea>
+            <div class="col-6 bg-primary d-flex flex-column">
+                <h2 class="text-white text-center my-3">Editor</h2>
+                    <div class="form-group flex-grow-1 d-flex flex-column">
+                        <textarea class="form-control flex-grow-1" id="editor" onkeyup="updatePreview()"></textarea>
                     </div>
             </div>
             <div class="col-6 bg-info">
-                <h2 style="color: white">Markdown Previewer</h2>
+                <h2 class="text-white text-center my-3">Markdown Preview</h2>
                 <div id="preview"></div>
             </div>
 
